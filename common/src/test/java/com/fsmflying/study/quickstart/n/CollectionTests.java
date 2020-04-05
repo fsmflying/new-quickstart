@@ -87,6 +87,10 @@ public class CollectionTests {
 
     }
 
+    /**
+     * Comparator比较
+     * 函数式接口
+     */
     @Test
     public void test_01() {
         Collections.sort(personList, new Comparator<Person>() {
