@@ -5,8 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
 
-public class LockTests {
-
+public class MemoryAllocateTests {
     @Before
     public void before(){
 
@@ -17,17 +16,6 @@ public class LockTests {
 
     }
 
-    public static class User {
-        String username;
-        String password;
-    }
-
-    /**
-     * 打印无竞争锁
-     * BasiedLocking:偏向锁
-     * -XX:BiasedLockingStartupDelay=0
-     * -XX:-UseBiasedLocking=false
-     */
     @Test
     public void test_01_Object(){
         Object o = new Object();
@@ -36,13 +24,5 @@ public class LockTests {
             System.out.println(ClassLayout.parseInstance(o).toPrintable());
         }
         System.out.println(ClassLayout.parseInstance(o).toPrintable());
-    }
-
-    /**
-     * 轻量级锁
-     */
-    @Test
-    public void test_02_(){
-
     }
 }
